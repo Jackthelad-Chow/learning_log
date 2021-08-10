@@ -1,0 +1,24 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap4 %}
+
+<!--登录页面。-->
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-4">Log in to your account.</h1>
+  </div>
+{% endblock page_header %}
+
+{% block content %}
+  <form method="post" action="{% url 'users:login' %}" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+<!--      登录按钮。-->
+      <button name="submit" class="btn btn-primary">Log in &raquo;</button>
+    {% endbuttons %}
+<!--      链接到主页。-->
+    <input type="hidden" name="next"
+      value="{% url 'learning_logs:index' %}" />
+  </form>
+
+{% endblock content %}

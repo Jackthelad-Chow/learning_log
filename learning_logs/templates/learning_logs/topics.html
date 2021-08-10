@@ -1,0 +1,29 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+  <h1>Topics</h1>
+{% endblock page_header %}
+
+<!--显示所有主题的页面。-->
+{% block content %}
+  <ul >
+    {% for topic in topics %}
+      <li><h3>
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+      </h3></li>
+        <p class="mb-4">{{ topic.date_added|date:'M d, Y H:i' }}</p>
+
+    {% empty %}
+      <li><h3>No topics have been added yet.</h3></li>
+    {% endfor %}
+  </ul>
+
+<!--  链接到添加新主题的页面。-->
+<!--  <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic</a></h3>-->
+
+  <h3><a href="{% url 'learning_logs:new_topic' %}">
+    <button name="submit" class="btn btn-primary">
+      Add a new topic &raquo;</button>
+  </a></h3>
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+
+<!--退出登录提示。-->
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">You have been logged out.</h1>
+<!--    <h1 class="display-3">Thank you for visiting!</h1>-->
+
+    <p class="lead">Thank you for visiting!</p>
+
+<!--    设置一个用户注册的按钮-->
+    <a class="btn btn-lg btn-primary"  href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+
+<!--    设置一个用户登录的按钮-->
+    <a class="btn btn-lg btn-primary"  href="{% url 'users:login' %}"
+        role="button">Login &raquo;</a>
+  </div>
+{% endblock page_header %}
