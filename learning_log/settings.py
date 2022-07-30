@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # 第三方应用程序。
     'bootstrap4',
 
-    # 默认添加的应用程序
+    # Django默认添加的应用程序
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,12 +146,12 @@ TIME_ZONE = 'Asia/Shanghai'
 
 LOGIN_URL = 'users:login'
 
-# Heroku 设置
-import django_heroku
-
-django_heroku.settings(locals())
-
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
+# # Heroku 设置
+# import django_heroku
+#
+# django_heroku.settings(locals())
+#
+# if os.environ.get('DEBUG') == 'TRUE':
+#     DEBUG = True
+# elif os.environ.get('DEBUG') == 'FALSE':
+#     DEBUG = False
